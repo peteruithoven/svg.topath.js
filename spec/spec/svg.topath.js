@@ -275,6 +275,30 @@ describe('toPath()', function() {
     })
 
   })
+	
+	
+	describe('from imported rect', function() {
+    var svgJSRect
+		var rect
+
+    beforeEach(function() {
+      var container = document.createElement("div");
+			var svg = SVG(container);
+			var store = svg.svg(rawSVGWithRect);
+			svgJSRect = store.get("rect3022");
+			rect = container.querySelectorAll("rect")[0];
+    })
+
+    it('from svg.js object: generates a path', function() {
+      expect(svgJSRect.toPath() instanceof SVG.Path).toBe(true)
+    })
+		
+		it('from plain rect object: generates a path', function() {
+      expect(rect.toPath() instanceof SVG.Path).toBe(true)
+    })
+
+  })
+
   
 })
 
