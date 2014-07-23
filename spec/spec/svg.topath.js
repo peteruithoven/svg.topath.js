@@ -294,7 +294,7 @@ describe('toPath()', function() {
     })
 		
 		it('from plain rect object: generates a path', function() {
-      expect(rect.toPath() instanceof SVG.Path).toBe(true)
+      expect(rect.instance.toPath() instanceof SVG.Path).toBe(true)
     })
 
   })
